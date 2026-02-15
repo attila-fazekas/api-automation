@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-starter"
+rootProject.name = "api-automation"
 
 gradle.startParameter.isContinueOnFailure = true
 
@@ -13,4 +13,4 @@ refreshVersions {
     }
 }
 
-include("app")
+include("automation")

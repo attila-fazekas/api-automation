@@ -1,5 +1,5 @@
 /*
- * Copyright 2026 Attila Fazekas
+ * Copyright 2023-2025 Attila Fazekas & contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,31 +15,15 @@
  */
 
 plugins {
-    idea
-    id("com.diffplug.spotless")
+    id("kotlin-conventions")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
-group = "io.github.attila-fazekas"
-version = "1.0.0"
-
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
-
-spotless {
-    kotlin {
-        target("**/*.kt")
-        endWithNewline()
-        trimTrailingWhitespace()
-    }
-    kotlinGradle {
-        target("**/*.kts")
-        endWithNewline()
-        trimTrailingWhitespace()
-    }
-}
-
-tasks.spotlessCheck {
-    dependsOn(tasks.spotlessApply)
+dependencies {
+    implementation("io.ktor:ktor-client-cio-jvm:_")
+    implementation("io.ktor:ktor-client-content-negotiation-jvm:_")
+    implementation("io.ktor:ktor-client-core:_")
+    implementation("io.ktor:ktor-client-logging:_")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:_")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:_")
 }
