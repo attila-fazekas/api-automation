@@ -1,4 +1,4 @@
-rootProject.name = "api-automation"
+rootProject.name = "kolibrium-api-starter"
 
 gradle.startParameter.isContinueOnFailure = true
 
